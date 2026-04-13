@@ -3,9 +3,8 @@
 name: Make project
 
 on:
-  push:
-    tags:
-      - 'v*'
+  repository_dispatch:
+  workflow_dispatch:
 
 jobs:
   build:
