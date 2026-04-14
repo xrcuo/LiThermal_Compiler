@@ -16,7 +16,7 @@ export STAGING_DIR=$ROOTPATH/target
 mkdir build
 cd build
 cmake $ROOTPATH/LiThermal -DROOTPATH=$ROOTPATH -DCMAKE_TOOLCHAIN_FILE=$ROOTPATH/LiThermal/toolchain.cmake
-make -j`nproc`
+make V=s -j1
 
 # compile BSOD
 $ROOTPATH/toolchain-sunxi-musl/toolchain/bin/arm-openwrt-linux-gcc -o $ROOTPATH/build/BSOD $ROOTPATH/LiThermal/tools/BSOD.c
